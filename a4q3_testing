@@ -1,0 +1,301 @@
+#LYIN MYA
+#LYM284
+#11192838
+#COM145
+#SECTION04
+
+# CMPT 145 Course material
+# Copyright (c) 2017-2020 Michael C Horsch
+# All rights reserved.
+#
+# This document contains resources for homework assigned to students of
+# CMPT 145 and shall not be distributed without permission.  Posting this
+# file to a public or private website, or providing this file to a person
+# not registered in CMPT 145, constitutes Academic Misconduct, according
+# to the University of Saskatchewan Policy on Academic Misconduct.
+#
+# Synopsis:
+#   Assignment 3: ADTs and Testing
+
+# This script is a starter file for testing the Statistics ADT
+
+import Statistics as S
+
+
+def close_enough(a, b, tolerance):
+    """
+    Purpose:
+        Check if 2 floating point values are close enough to 
+        be considered equal.  See the Addendum in the assignment!
+    Pre-Conditions:
+        :param a: a floating point value
+        :param b: a floating point value
+        :param tolerance: a small positive floating point value
+    Post-Conditions:
+        none
+    Return:
+        :return True if the difference between a and b is small
+    """
+    return abs(a - b) < tolerance
+
+
+
+#####################################################################
+# test Statistics.max()
+
+
+#test1
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(1)
+test_stat.add(5)
+result = test_stat.max()
+expected = 5
+reason = "Check count after 2 values added"
+
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+#test2
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(-5)
+result = test_stat.max()
+expected = -1
+reason = "Check count after 2 negative values added"
+
+# call the operation
+stats = S.Statistics()
+for v in data_in:
+    stats.add(v)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+#test3
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(1)
+result = test_stat.max()
+expected = 1
+reason = "Check count after 2 mixed values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+#test4
+test_item = 'add() + count()'
+test_stat.add(0)
+
+result = test_stat.max()
+expected = 0
+reason = "Check count after 1 value added
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+#####################################################################
+# test Statistics.min()
+
+#test1
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(1)
+test_stat.add(5)
+result = test_stat.min()
+expected = 5
+reason = "Check count after 2 values added"
+
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+#test2
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(-5)
+result = test_stat.min()
+expected = -1
+reason = "Check count after 2 negative values added"
+
+# call the operation
+stats = S.Statistics()
+for v in data_in:
+    stats.add(v)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+#test3
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(1)
+result = test_stat.min()
+expected = 1
+reason = "Check count after 2 mixed values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+#test4
+test_item = 'add() + count()'
+test_stat.add(0)
+
+result = test_stat.min()
+expected = 0
+reason = "Check count after 1 value added
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+
+print('*** Test script completed ***')
+
+#####################################################################
+# test Statistics.range()
+
+# test1
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(1)
+test_stat.add(5)
+result = test_stat.range()
+expected = 4
+reason = "Check count after 2 positive values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+# test2
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(-5)
+result = test_stat.range()
+expected = -4
+reason = "Check count after 2 negative values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+# test3
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(1)
+result = test_stat.range()
+expected = -2
+reason = "Check count after 2 mixed values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+# test4
+test_item = 'add() + count()'
+test_stat.add(0)
+
+result = test_stat.range()
+expected = 0
+reason = "Check count after 1 value added
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+#####################################################################
+# test Statistics.mode()
+
+# test1
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(1)
+test_stat.add(5)
+test_stat.add(5)
+result = test_stat.mode()
+expected = 5
+reason = "Check count after positive values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+# test2
+test_stat = Statistics()
+test_item = 'add() + count()'
+test_stat.add(-1)
+test_stat.add(-5)
+test_stat.add(-5)
+result = test_stat.mode()
+expected = -5
+reason = "Check count after negative values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+# test3
+test_item = 'add() + count()'
+test_stat.add(0)
+test_stat.add(0)
+test_stat.add(0)
+result = test_stat.mode()
+expected = 0
+reason = "Check count after all zero values added"
+
+# call the operation
+stats = S.Statistics()
+stats.add(data_in)
+result = stats.count()
+
+if result != expected:
+    print('Error in {}: expected {} but obtained {} -- {}'.format(test_stat, expected, result, reason))
+
+
+print('*** Test script completed ***')

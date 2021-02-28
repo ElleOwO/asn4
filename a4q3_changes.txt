@@ -1,0 +1,30 @@
+#LYIN MYA
+#LYM284
+#11192838
+#COM145
+#SECTION04
+
+initialized new operations to Statistics ADT
+        self.__range = 0 #range seen so far
+        self.__mode = 0 #mode seen so far
+        self.__max = 0 #max value so far
+        self.__min = 0 #min value so far
+	self.__list_of_nums = [] #list of numbers so far
+
+added min/max to add
+        if self.__min is None:
+            self.__min = value
+            self.__max = value
+        else:
+            self.__min = min(value, self.__min)
+            self.__max = max(value, self.__max)
+added range to add
+	self.__range = (self.__max) - (self.__min)
+added list for mode
+	self.__list_of_nums.append(value)
+added 
+created new functions to Statistics ADT
+def mode
+def range
+def max
+def min
